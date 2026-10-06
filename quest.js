@@ -3,12 +3,12 @@
   else root.Quest = factory(root.crypto);
 })(typeof globalThis !== 'undefined' ? globalThis : this, function (crypto) {
   'use strict';
-  const HASHES = {
-    timestamp: '498abd4d86da09e0dca4bcf1aade64880f07c825d08d40397689a12fad8753f2',
-    wallet: '737c978e96f4867e8af73f32177fa598abc1aa46b3db0afdb2ce230de2acd3fd',
-    location: '7104741a92e73eb6c5d69cd04cf0afbe50a8796a010d8fa25daaf79e5e173bf3',
-    final: '2797f22976c569a49761759b1212af4a2719f4dde3958b176569f711d2cc0af9'
-  };
+const HASHES = {
+  timestamp: '498abd4d86da09e0dca4bcf1aade64880f07c825d08d40397689a12fad8753f2',
+  wallet: '737c978e96f4867e8af73f32177fa598abc1aa46b3db0afdb2ce230de2acd3fd',
+  location: '7104741a92e73eb6c5d69cd04cf0afbe50a8796a010d8fa25daaf79e5e173bf3',
+  final: '2797f22976c569a49761759b1212af4a2719f4dde3958b176569f711d2cc0af9'
+};
   const WALLETS = Object.freeze([
     {id:'w0', address:'0x7b51e9…e42a', kind:'math', question:'8 × 8 = ?', answer:'64'},
     {id:'w1', address:'0x91cf26…110d', kind:'capital', question:'CAPITAL OF MADAGASCAR?', answer:'antananarivo'},
