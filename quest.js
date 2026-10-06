@@ -96,8 +96,13 @@
     if((await digest(input)).hex!==HASHES[key]||s.stage!==before||s.view!==before)return false;
     if(before!==5)s.fragments.push(input);
     s.view=++s.stage;
-    if(s.stage===6)s.puzzle=createPuzzle();
-    return true;
+if (s.stage === 6) {
+  s.puzzle = {
+    tiles: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0],
+    moves: 0
+  };
+  s.view = s.stage = 7;
+}
   }
   function openWallet(s,id) {
     if(s.stage!==3||s.view!==3||s.active||s.corrupted||s.scanned.includes(id)||!WALLETS.some(w=>w.id===id))return false;
