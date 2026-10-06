@@ -93,7 +93,7 @@
     $('stages').innerHTML=labels.map((label,i)=>{
       const n=i+1;const status=view===n?'active':state.stage>n?'complete':state.stage===n?'available':'locked';
       return `<button type="button" class="stage ${status}" data-stage="${n}" ${Quest.canNavigate(state,n)?'':'disabled'} ${status==='active'?'aria-current="page"':''}><span class="stage-number">${state.stage>n?'✓':`0${n}`}</span><span class="stage-description"><b>${label}</b><span>${names[i]}</span></span><span class="stage-light"></span></button>`;
-    }).join('')+[[5,'FINAL ASSEMBLY'],[6,'FINAL LOCK'],[7,'CASE CLOSED']].map(([n,label])=>`<button type="button" class="index-end ${state.stage>=n?'ready':''} ${view===n?'selected':''}" data-stage="${n}" ${Quest.canNavigate(state,n)?'':'disabled'} ${view===n?'aria-current="page"':''}><span>↳</span>${label}${state.stage>n?' ✓':''}</button>`).join('');
+    }).join('')+[[5,'FINAL ASSEMBLY'],[7,'CASE CLOSED']].map(([n,label])=>`<button type="button" class="index-end ${state.stage>=n?'ready':''} ${view===n?'selected':''}" data-stage="${n}" ${Quest.canNavigate(state,n)?'':'disabled'} ${view===n?'aria-current="page"':''}><span>↳</span>${label}${state.stage>n?' ✓':''}</button>`).join('');
     document.querySelectorAll('[data-stage]').forEach(button=>button.onclick=()=>goTo(Number(button.dataset.stage)));
     $('main').className=view===0?'start-page':view===7?'end-page':'';
     if(view===0){
